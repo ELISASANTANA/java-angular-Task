@@ -1,0 +1,28 @@
+<div class="container">
+  <div class="list">
+    <table class="table">
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th scope="col">Nome do funcionario</th>
+          <th scope="col">Cidade</th>
+          <th scope="col">Cargo</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let funcionario of funcionarios">
+          <td>#{{funcionario.id_funcionario}}</td>
+          <td>{{funcionario.func_nome}}</td>
+          <td>{{funcionario.func_cidade}}</td>
+          <td>{{funcionario.id_cargo}}</td>
+          <!-- <td>
+            <!-- <i routerLink="/editar-cargo/{{cargo.id_cargo}}" class="fa-solid fa-pen"></i>
+          <i routerLink="/exclusao-funcionario/{{funcionario.id_funcionario}}"
+            class="fa-solid fa-eraser text-danger"></i>
+          <i routerLink="/editar-cargo/" class="fa-solid fa-pen"></i>
+          </td> -->
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

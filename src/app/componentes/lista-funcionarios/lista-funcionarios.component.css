@@ -1,0 +1,129 @@
+.container {
+  display: flex;
+  justify-content: center;
+
+}
+
+.list {
+  width: 50%;
+  height: 350px;
+  background-color: rgb(39, 48, 54);
+  border-radius: 15px;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: grid;
+  grid-template-columns: auto auto;
+  grid-template-rows: auto;
+  justify-content: center;
+  overflow: scroll;
+  font-family: aktiv-grotesk-extended, sans-serif;
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+}
+
+.cargo {
+  margin: 20px;
+  width: 300px;
+  height: 70px;
+  background-color: rgba(39, 48, 54, .85);
+  color: #ffff;
+  border-radius: 10px;
+  padding: 18px 0 0 20px;
+  align-items: center;
+}
+
+i {
+  cursor: pointer;
+  margin: 0 5px 0 5px;
+}
+
+.content {
+  position: relative;
+  left: 540px;
+  top: 30px;
+}
+
+.table {
+  color: #fff;
+  width: 550px;
+}
+
+th,
+td {
+  margin: 0 20px 0 20px;
+}
+
+.content__item {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  counter-increment: itemcounter;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  z-index: 1;
+  pointer-events: none;
+}
+
+.content__item::before {
+  color: var(--color-number);
+  position: absolute;
+  top: 0;
+  left: 0;
+  content: counters(itemcounter, ".", decimal-leading-zero);
+}
+
+.button {
+  pointer-events: auto;
+  cursor: pointer;
+  background: #e7e7e7;
+  /* border: none; */
+  padding: 1rem 1.2rem;
+  margin: 0;
+  font-family: inherit;
+  font-size: inherit;
+  position: relative;
+  display: inline-block;
+}
+
+.button::before,
+.button::after {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.button--mimas {
+  text-transform: uppercase;
+  letter-spacing: 0.05rem;
+  font-weight: 700;
+  font-size: 0.85rem;
+  border-radius: 0.5rem;
+  overflow: hidden;
+  color: #fff;
+  background: #e7e7e7;
+}
+
+.button--mimas span {
+  position: relative;
+  mix-blend-mode: difference;
+}
+
+.button--mimas::before {
+  content: '';
+  background: #181f2b;
+  width: 120%;
+  left: -10%;
+  transform: skew(30deg);
+  transition: transform 0.4s cubic-bezier(0.3, 1, 0.8, 1);
+}
+
+.button--mimas:hover::before {
+  transform: translate3d(100%, 0, 0);
+}
